@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ze1-e7-OST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475" y="616"/>
+            <point key="canvasLocation" x="1475" y="574"/>
         </scene>
         <!--Tickets-->
         <scene sceneID="wg7-f3-ORb">
@@ -169,15 +169,26 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEvent:" destination="QTA-ID-GZr" eventType="touchUpInside" id="FRP-bv-CeE"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wMg-rQ-oDR">
+                                <rect key="frame" x="20" y="70" width="560" height="473"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="JQj-Ja-Ain" secondAttribute="trailing" id="FRT-fe-Wof"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wMg-rQ-oDR" secondAttribute="leading" id="IaI-sv-78s"/>
+                            <constraint firstItem="wMg-rQ-oDR" firstAttribute="top" secondItem="8Am-JW-ecn" secondAttribute="bottom" constant="8" id="Kky-LR-W9d"/>
+                            <constraint firstItem="IxS-8c-rQe" firstAttribute="top" secondItem="wMg-rQ-oDR" secondAttribute="bottom" constant="8" id="Nla-26-0Fw"/>
                             <constraint firstItem="8Am-JW-ecn" firstAttribute="centerX" secondItem="uQ8-Nu-SUr" secondAttribute="centerX" id="OBn-O4-9je"/>
                             <constraint firstItem="8Am-JW-ecn" firstAttribute="top" secondItem="wjM-fN-yOk" secondAttribute="bottom" id="ORM-hf-1Fe"/>
                             <constraint firstItem="8Am-JW-ecn" firstAttribute="centerX" secondItem="uQ8-Nu-SUr" secondAttribute="centerX" id="ahd-IF-Lj7"/>
                             <constraint firstItem="JQj-Ja-Ain" firstAttribute="baseline" secondItem="8Am-JW-ecn" secondAttribute="baseline" id="any-Df-M3w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wMg-rQ-oDR" secondAttribute="trailing" id="b6S-EL-ie0"/>
                             <constraint firstItem="JQj-Ja-Ain" firstAttribute="firstBaseline" secondItem="8Am-JW-ecn" secondAttribute="baseline" id="yQW-uD-P1U"/>
                         </constraints>
                         <variation key="default">
@@ -187,6 +198,10 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="first" id="8gY-RK-HfS" userLabel="Feed"/>
+                    <connections>
+                        <outlet property="feed" destination="wMg-rQ-oDR" id="i4Y-T6-ohJ"/>
+                        <outlet property="stubble" destination="8Am-JW-ecn" id="7CG-Cb-slm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVU-N0-aU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
