@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let tabBarVC: UITabBarController = self.window?.rootViewController as! UITabBarController
         tabBarVC.selectedIndex = 2
+        tabBarVC.tabBar.barTintColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
         return true
     }
 

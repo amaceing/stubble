@@ -66,7 +66,7 @@
                             <constraint firstItem="LZB-XE-xaL" firstAttribute="top" secondItem="QVV-6C-Qmg" secondAttribute="bottom" constant="243" id="Kgv-GO-YM9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" id="y7r-1g-eoB"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="first" id="y7r-1g-eoB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y5-7b-4zU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +98,7 @@
                             <constraint firstItem="SzA-Xj-9Kc" firstAttribute="centerX" secondItem="kTC-xG-qHZ" secondAttribute="centerX" id="pUO-pR-1Qc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="ZhT-qZ-xMB"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="first" id="ZhT-qZ-xMB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ze1-e7-OST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +130,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tickets" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Tickets" image="first" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +186,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="8gY-RK-HfS" userLabel="Feed"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="first" id="8gY-RK-HfS" userLabel="Feed"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVU-N0-aU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,6 +217,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
