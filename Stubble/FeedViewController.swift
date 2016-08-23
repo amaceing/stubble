@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FeedViewController: UIViewController {
     @IBOutlet weak var feed: UITableView!
     @IBOutlet weak var stubble: UILabel!
 
@@ -27,24 +27,24 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: Table View Implementation
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //implement later
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //implement later
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        //implement later
-        return 1
-    }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //implement later
-    }
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        //implement later
+//        return 1
+//    }
+//    
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        //implement later
+//        return 1
+//    }
+//    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        //implement later
+//        return 1
+//    }
+//
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        //implement later
+//    }
     
     
 }
