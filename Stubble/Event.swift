@@ -15,6 +15,7 @@ enum EventType {
     case Soccer
     case Concert
     case Play
+    case Other
 }
 
 class Event: NSObject {
