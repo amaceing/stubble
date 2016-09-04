@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         let tabBarVC: UITabBarController = self.window?.rootViewController as! UITabBarController
         tabBarVC.selectedIndex = 2
         tabBarVC.tabBar.barTintColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 1.00)
+        
+        FIRApp.configure()
+        
         return true
     }
 
