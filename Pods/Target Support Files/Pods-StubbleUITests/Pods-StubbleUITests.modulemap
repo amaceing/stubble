@@ -1,0 +1,6 @@
+framework module Pods_StubbleUITests {
+  umbrella header "Pods-StubbleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
