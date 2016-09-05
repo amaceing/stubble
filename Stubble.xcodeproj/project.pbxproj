@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A229EE511D7D2443001E8743 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229EE4F1D7D2443001E8743 /* LoginViewController.swift */; };
 		A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */; };
 		A29CDA4C1D7CEFBC002EAAA0 /* NewEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */; };
 		A29CDA4E1D7CFB40002EAAA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		50BAD2F5CC380B912848DAF8 /* Pods-Stubble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stubble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stubble/Pods-Stubble.debug.xcconfig"; sourceTree = "<group>"; };
+		A229EE4F1D7D2443001E8743 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEventViewController.xib; sourceTree = "<group>"; };
 		A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		A296886C1D6A1FCF00614E11 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				A229EE4F1D7D2443001E8743 /* LoginViewController.swift */,
 				A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */,
 				A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */,
 				A2CDF3221D697F9000C55FE5 /* TicketManagerViewController.swift */,
@@ -465,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A229EE511D7D2443001E8743 /* LoginViewController.swift in Sources */,
 				A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */,
 				A2CDF2F71D697D5100C55FE5 /* ProfileViewController.swift in Sources */,
 				A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, ‘9.3’
 
 target 'Stubble' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,6 +7,7 @@ target 'Stubble' do
 
   # Pods for Stubble
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   target 'StubbleTests' do
     inherit! :search_paths
