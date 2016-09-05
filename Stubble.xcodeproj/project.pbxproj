@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */; };
 		A29CDA4C1D7CEFBC002EAAA0 /* NewEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */; };
+		A29CDA4E1D7CFB40002EAAA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */; };
 		A2CDF2F31D697D5100C55FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF2F21D697D5100C55FE5 /* AppDelegate.swift */; };
 		A2CDF2F51D697D5100C55FE5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */; };
 		A2CDF2F71D697D5100C55FE5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF2F61D697D5100C55FE5 /* ProfileViewController.swift */; };
@@ -44,6 +45,7 @@
 		50BAD2F5CC380B912848DAF8 /* Pods-Stubble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stubble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stubble/Pods-Stubble.debug.xcconfig"; sourceTree = "<group>"; };
 		A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEventViewController.xib; sourceTree = "<group>"; };
+		A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2CDF2EF1D697D5100C55FE5 /* Stubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CDF2F21D697D5100C55FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				A296886C1D6A1FCF00614E11 /* Contollers */,
 				A2CDF2FB1D697D5200C55FE5 /* Assets.xcassets */,
 				A2CDF2FD1D697D5200C55FE5 /* LaunchScreen.storyboard */,
+				A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */,
 				A2CDF3001D697D5200C55FE5 /* Info.plist */,
 			);
 			path = Stubble;
@@ -312,6 +315,7 @@
 			files = (
 				A2CDF2FF1D697D5200C55FE5 /* LaunchScreen.storyboard in Resources */,
 				A2CDF2FC1D697D5200C55FE5 /* Assets.xcassets in Resources */,
+				A29CDA4E1D7CFB40002EAAA0 /* GoogleService-Info.plist in Resources */,
 				A29CDA4C1D7CEFBC002EAAA0 /* NewEventViewController.xib in Resources */,
 				A2CDF2FA1D697D5100C55FE5 /* Main.storyboard in Resources */,
 			);

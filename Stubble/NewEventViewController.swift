@@ -1,3 +1,4 @@
+
 //
 //  NewEventViewController.swift
 //  Stubble
@@ -15,9 +16,16 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var askingPriceField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
+    var eventToCreate: Event?
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        print("viewInit")
+    }
     
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +37,46 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         self.timeField.delegate = self
         self.askingPriceField.delegate = self
         self.descriptionField.delegate = self
+        
+        print("viewLoad")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        eventToCreate?.title = titleField.text!
+        eventToCreate?.eventType = setEventType()
+        eventToCreate?.numberOfTickets = Int(ticketsField.text!)!
+        eventToCreate?.askingPrice = Int(askingPriceField.text!)!
+    }
+    
+    func setEventType() -> EventType {
+        let typeOfEvent = typeField.text!
+        var type: EventType!
+        switch typeOfEvent {
+        case "BasketBall":
+            type = EventType.Basketball
+        case "BaseBall":
+            type = EventType.Baseball
+        case "Football":
+            type = EventType.Football
+        case "Soccer":
+            type = EventType.Soccer
+        case "Concert":
+            type = EventType.Concert
+        case "Play":
+            return EventType.Play
+        case "Other":
+            type = EventType.Other
+        default:
+            print("Invalid event type")
+        }
+        return type
     }
     
 

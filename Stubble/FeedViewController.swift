@@ -25,9 +25,10 @@ class FeedViewController: UIViewController {
 
     @IBAction func addEvent(sender: AnyObject) {
         var eventToAdd = Event(title: "", eventType: EventType.Other, numberOfTickets: 0, dateAndtime: NSDate(), askingPrice: 0, eventDesc: "")
-        
-        
-        
+        let newEventVC = NewEventViewController(nibName: "NewEventViewController", bundle: nil)
+        newEventVC.eventToCreate = eventToAdd
+        self.navigationController?.pushViewController(newEventVC, animated: true)
+        self.events.append(newEventVC.eventToCreate!)
     }
     
     //MARK: Table View Implementation
