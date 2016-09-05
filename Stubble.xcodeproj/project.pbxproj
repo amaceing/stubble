@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */; };
+		A29CDA4C1D7CEFBC002EAAA0 /* NewEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */; };
 		A2CDF2F31D697D5100C55FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF2F21D697D5100C55FE5 /* AppDelegate.swift */; };
 		A2CDF2F51D697D5100C55FE5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */; };
 		A2CDF2F71D697D5100C55FE5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF2F61D697D5100C55FE5 /* ProfileViewController.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		50BAD2F5CC380B912848DAF8 /* Pods-Stubble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stubble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stubble/Pods-Stubble.debug.xcconfig"; sourceTree = "<group>"; };
+		A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEventViewController.xib; sourceTree = "<group>"; };
 		A2CDF2EF1D697D5100C55FE5 /* Stubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CDF2F21D697D5100C55FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CDF2F81D697D5100C55FE5 /* Main.storyboard */,
+				A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 		A296886C1D6A1FCF00614E11 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */,
 				A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */,
 				A2CDF3221D697F9000C55FE5 /* TicketManagerViewController.swift */,
 				A2CDF3241D697FAD00C55FE5 /* MessagesViewController.swift */,
@@ -306,6 +312,7 @@
 			files = (
 				A2CDF2FF1D697D5200C55FE5 /* LaunchScreen.storyboard in Resources */,
 				A2CDF2FC1D697D5200C55FE5 /* Assets.xcassets in Resources */,
+				A29CDA4C1D7CEFBC002EAAA0 /* NewEventViewController.xib in Resources */,
 				A2CDF2FA1D697D5100C55FE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +463,7 @@
 			files = (
 				A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */,
 				A2CDF2F71D697D5100C55FE5 /* ProfileViewController.swift in Sources */,
+				A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */,
 				A2CDF3271D697FB900C55FE5 /* SearchEventsViewController.swift in Sources */,
 				A2CDF2F31D697D5100C55FE5 /* AppDelegate.swift in Sources */,
 				A2CDF3231D697F9000C55FE5 /* TicketManagerViewController.swift in Sources */,

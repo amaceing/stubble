@@ -19,12 +19,12 @@ enum EventType {
 }
 
 class Event: NSObject {
-    private var title: String
-    private var eventType: EventType
-    private var numberOfTickets: Int
-    private var dateAndTime: NSDate
-    private var askingPrice: Int
-    private var eventDescription: String
+    var title: String
+    var eventType: EventType
+    var numberOfTickets: Int
+    var dateAndTime: NSDate
+    var askingPrice: Int
+    var eventDescription: String
     
     init(title: String, eventType: EventType, numberOfTickets: Int, dateAndtime: NSDate, askingPrice: Int, eventDesc: String) {
         self.title = title
@@ -34,4 +34,7 @@ class Event: NSObject {
         self.askingPrice = askingPrice
         self.eventDescription = eventDesc
     }
+    
+    
+    
 }
