@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		50BAD2F5CC380B912848DAF8 /* Pods-Stubble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stubble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stubble/Pods-Stubble.debug.xcconfig"; sourceTree = "<group>"; };
+		A229CB921D94E35400920DC7 /* Stubble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stubble.entitlements; sourceTree = "<group>"; };
 		A229EE4F1D7D2443001E8743 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A29CDA4A1D7CEFBC002EAAA0 /* NewEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEventViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 		A2CDF2F11D697D5100C55FE5 /* Stubble */ = {
 			isa = PBXGroup;
 			children = (
+				A229CB921D94E35400920DC7 /* Stubble.entitlements */,
 				A2CDF2F21D697D5100C55FE5 /* AppDelegate.swift */,
 				A296886A1D6A1FC100614E11 /* Models */,
 				A296886B1D6A1FC900614E11 /* Views */,
@@ -280,13 +282,22 @@
 				TargetAttributes = {
 					A2CDF2EE1D697D5100C55FE5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FBF4TQ644W;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					A2CDF3041D697D5200C55FE5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A2CDF2EE1D697D5100C55FE5;
 					};
 					A2CDF30F1D697D5200C55FE5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = A2CDF2EE1D697D5100C55FE5;
 					};
 				};
@@ -619,10 +630,13 @@
 			baseConfigurationReference = 50BAD2F5CC380B912848DAF8 /* Pods-Stubble.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Stubble/Stubble.entitlements;
+				DEVELOPMENT_TEAM = FBF4TQ644W;
 				INFOPLIST_FILE = Stubble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.Stubble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -631,10 +645,13 @@
 			baseConfigurationReference = E239984DF25F6201199CE755 /* Pods-Stubble.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Stubble/Stubble.entitlements;
+				DEVELOPMENT_TEAM = FBF4TQ644W;
 				INFOPLIST_FILE = Stubble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.Stubble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -647,6 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.StubbleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stubble.app/Stubble";
 			};
 			name = Debug;
@@ -660,6 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.StubbleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stubble.app/Stubble";
 			};
 			name = Release;
@@ -672,6 +691,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.StubbleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Stubble;
 			};
 			name = Debug;
@@ -684,6 +704,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.StubbleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Stubble;
 			};
 			name = Release;

@@ -18,7 +18,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var descriptionField: UITextField!
     var eventToCreate: Event?
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         print("viewInit")
     }
@@ -47,7 +47,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         eventToCreate?.title = titleField.text!
         eventToCreate?.eventType = setEventType()
@@ -60,19 +60,19 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         var type: EventType!
         switch typeOfEvent {
         case "BasketBall":
-            type = EventType.Basketball
+            type = EventType.basketball
         case "BaseBall":
-            type = EventType.Baseball
+            type = EventType.baseball
         case "Football":
-            type = EventType.Football
+            type = EventType.football
         case "Soccer":
-            type = EventType.Soccer
+            type = EventType.soccer
         case "Concert":
-            type = EventType.Concert
+            type = EventType.concert
         case "Play":
-            return EventType.Play
+            return EventType.play
         case "Other":
-            type = EventType.Other
+            type = EventType.other
         default:
             print("Invalid event type")
         }

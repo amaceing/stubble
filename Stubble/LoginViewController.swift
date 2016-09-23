@@ -26,8 +26,8 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func createUser(sender: AnyObject) {
-        FIRAuth.auth()?.createUserWithEmail(username.text!, password: password.text!, completion: {
+    @IBAction func createUser(_ sender: AnyObject) {
+        FIRAuth.auth()?.createUser(withEmail: username.text!, password: password.text!, completion: {
             (user, error) in
             if error != nil {
                 self.authResult.text = error?.localizedDescription
@@ -37,15 +37,16 @@ class LoginViewController: UIViewController {
         })
     }
 
-    @IBAction func logUserIn(sender: AnyObject) {
-        FIRAuth.auth()?.signInWithEmail(username.text!, password: password.text!, completion: {
+    @IBAction func logUserIn(_ sender: AnyObject) {
+        FIRAuth.auth()?.signIn(withEmail: username.text!, password: password.text!, completion: {
             (user, error) in
             if error != nil {
                 self.authResult.text = error?.localizedDescription
+                print(error?.localizedDescription)
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let feedVC = storyboard.instantiateViewControllerWithIdentifier("tabBarVC")
-                self.presentViewController(feedVC, animated: true, completion: nil)
+                let feedVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
+                self.present(feedVC, animated: true, completion: nil)
             }
         })
     }

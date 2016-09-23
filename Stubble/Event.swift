@@ -9,24 +9,24 @@
 import Foundation
 
 enum EventType {
-    case Basketball
-    case Baseball
-    case Football
-    case Soccer
-    case Concert
-    case Play
-    case Other
+    case basketball
+    case baseball
+    case football
+    case soccer
+    case concert
+    case play
+    case other
 }
 
 class Event: NSObject {
     var title: String
     var eventType: EventType
     var numberOfTickets: Int
-    var dateAndTime: NSDate
+    var dateAndTime: Date
     var askingPrice: Int
     var eventDescription: String
     
-    init(title: String, eventType: EventType, numberOfTickets: Int, dateAndtime: NSDate, askingPrice: Int, eventDesc: String) {
+    init(title: String, eventType: EventType, numberOfTickets: Int, dateAndtime: Date, askingPrice: Int, eventDesc: String) {
         self.title = title
         self.eventType = eventType
         self.numberOfTickets = numberOfTickets
