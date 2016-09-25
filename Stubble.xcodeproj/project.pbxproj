@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32B6BBDF7578CF41AEBEB2B6 /* Pods_Stubble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA90C29E98FC93D0C8CF363 /* Pods_Stubble.framework */; };
+		3C7FF35D1D9765990057BB75 /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF35C1D9765990057BB75 /* JsonSerializer.swift */; };
+		3CB38A561D976E0F0047D40A /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB38A551D976E0F0047D40A /* DB.swift */; };
+		627AA491FC820216916D0743 /* Pods_StubbleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7528C214A96FA377F95B3DD2 /* Pods_StubbleUITests.framework */; };
 		A229EE511D7D2443001E8743 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229EE4F1D7D2443001E8743 /* LoginViewController.swift */; };
 		A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */; };
 		A29CDA4E1D7CFB40002EAAA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */; };
@@ -22,6 +26,7 @@
 		A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF3241D697FAD00C55FE5 /* MessagesViewController.swift */; };
 		A2CDF3271D697FB900C55FE5 /* SearchEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF3261D697FB900C55FE5 /* SearchEventsViewController.swift */; };
 		A2E6FF771D6A53EF00870E47 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6FF761D6A53EF00870E47 /* Event.swift */; };
+		B40C6F2A0816C22D789F70E9 /* Pods_StubbleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86917598AE74EEFCA291094D /* Pods_StubbleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C7FF35C1D9765990057BB75 /* JsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonSerializer.swift; path = "../../../Downloads/JsonSerializerSwift-master/JsonSerializerSwift/JsonSerializer.swift"; sourceTree = "<group>"; };
+		3CB38A551D976E0F0047D40A /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		50BAD2F5CC380B912848DAF8 /* Pods-Stubble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stubble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stubble/Pods-Stubble.debug.xcconfig"; sourceTree = "<group>"; };
+		7528C214A96FA377F95B3DD2 /* Pods_StubbleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StubbleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA90C29E98FC93D0C8CF363 /* Pods_Stubble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stubble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86917598AE74EEFCA291094D /* Pods_StubbleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StubbleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A229CB921D94E35400920DC7 /* Stubble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stubble.entitlements; sourceTree = "<group>"; };
 		A229EE4F1D7D2443001E8743 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B6BBDF7578CF41AEBEB2B6 /* Pods_Stubble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40C6F2A0816C22D789F70E9 /* Pods_StubbleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +103,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627AA491FC820216916D0743 /* Pods_StubbleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C7FF35B1D97656F0057BB75 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3C7FF35C1D9765990057BB75 /* JsonSerializer.swift */,
+				3CB38A551D976E0F0047D40A /* DB.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		A296886A1D6A1FC100614E11 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +174,7 @@
 		A2CDF2F11D697D5100C55FE5 /* Stubble */ = {
 			isa = PBXGroup;
 			children = (
+				3C7FF35B1D97656F0057BB75 /* Utility */,
 				A229CB921D94E35400920DC7 /* Stubble.entitlements */,
 				A2CDF2F21D697D5100C55FE5 /* AppDelegate.swift */,
 				A296886A1D6A1FC100614E11 /* Models */,
@@ -186,6 +209,9 @@
 		B42321D0E6FC19A7E1568758 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AA90C29E98FC93D0C8CF363 /* Pods_Stubble.framework */,
+				86917598AE74EEFCA291094D /* Pods_StubbleTests.framework */,
+				7528C214A96FA377F95B3DD2 /* Pods_StubbleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -476,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A229EE511D7D2443001E8743 /* LoginViewController.swift in Sources */,
+				3CB38A561D976E0F0047D40A /* DB.swift in Sources */,
 				A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */,
 				A2CDF2F71D697D5100C55FE5 /* ProfileViewController.swift in Sources */,
 				A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */,
@@ -484,6 +511,7 @@
 				A2CDF3231D697F9000C55FE5 /* TicketManagerViewController.swift in Sources */,
 				A2E6FF771D6A53EF00870E47 /* Event.swift in Sources */,
 				A2CDF2F51D697D5100C55FE5 /* FeedViewController.swift in Sources */,
+				3C7FF35D1D9765990057BB75 /* JsonSerializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

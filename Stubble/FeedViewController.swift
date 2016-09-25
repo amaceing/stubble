@@ -12,7 +12,7 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var feed: UITableView!
     @IBOutlet weak var stubble: UILabel!
     fileprivate var events: [Event] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
