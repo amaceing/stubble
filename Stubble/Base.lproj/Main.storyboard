@@ -34,7 +34,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="searchInactive" id="acW-dT-cKf"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -66,7 +66,7 @@
                             <constraint firstItem="LZB-XE-xaL" firstAttribute="top" secondItem="QVV-6C-Qmg" secondAttribute="bottom" constant="243" id="Kgv-GO-YM9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="first" id="y7r-1g-eoB"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="messagesInactive" id="y7r-1g-eoB"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y5-7b-4zU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,7 +98,7 @@
                             <constraint firstItem="SzA-Xj-9Kc" firstAttribute="centerX" secondItem="kTC-xG-qHZ" secondAttribute="centerX" id="pUO-pR-1Qc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="first" id="ZhT-qZ-xMB"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileInactive" id="ZhT-qZ-xMB"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ze1-e7-OST" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,7 +130,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tickets" image="first" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Tickets" image="walletInactive" id="cPa-gy-q4n"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -308,9 +308,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.13725490196078433" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.70588235294117641" green="0.62745098039215685" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
+                                <color key="value" red="0.70588235294117641" green="0.62745098039215685" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
@@ -428,7 +432,7 @@
         <scene sceneID="IDS-eo-GQE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Tg-YJ-zz2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="first" id="8gY-RK-HfS" userLabel="Feed"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feedInactive" selectedImage="feedActive" id="8gY-RK-HfS" userLabel="Feed"/>
                     <toolbarItems/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ee-PJ-ASq">
@@ -446,6 +450,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="feedActive" width="31" height="31"/>
+        <image name="feedInactive" width="31" height="31"/>
+        <image name="messagesInactive" width="31" height="31"/>
+        <image name="profileInactive" width="31" height="31"/>
+        <image name="searchInactive" width="31" height="31"/>
+        <image name="walletInactive" width="31" height="31"/>
     </resources>
 </document>
