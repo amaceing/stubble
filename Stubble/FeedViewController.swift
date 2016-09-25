@@ -52,15 +52,5 @@ class FeedViewController: UIViewController {
 //        //implement later
 //    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var eventToAdd = Event(title: "", eventType: EventType.other, numberOfTickets: 0, dateAndtime: Date(), askingPrice: 0, eventDesc: "")
-        if (segue.identifier == "newEvent") {
-            if let newEventVC: NewEventViewController = segue.destination as? NewEventViewController {
-                newEventVC.eventToCreate = eventToAdd
-            }
-        }
-    }
-    
-    
 }
 
