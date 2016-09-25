@@ -29,7 +29,6 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         self.titleField.delegate = self
         self.typeField.delegate = self
@@ -37,9 +36,6 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         self.timeField.delegate = self
         self.askingPriceField.delegate = self
         self.descriptionField.delegate = self
-        
-        print("viewLoad")
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,9 +55,9 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         let typeOfEvent = typeField.text!
         var type: EventType!
         switch typeOfEvent {
-        case "BasketBall":
+        case "Basketball":
             type = EventType.basketball
-        case "BaseBall":
+        case "Baseball":
             type = EventType.baseball
         case "Football":
             type = EventType.football
@@ -79,7 +75,20 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         return type
     }
     
-
+    @IBAction func createEvent(_ sender: UIButton) {
+        let title: String = self.titleField.text!
+        let type = setEventType()
+        let tickets = self.ticketsField.text!
+        let time = self.timeField.text!
+        let askingPrice = self.askingPriceField.text!
+        let description = self.descriptionField.text!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let eventDate = formatter.date(from: time)
+        let event = Event(title: title, eventType: type, numberOfTickets: Int(tickets)!, dateAndtime: eventDate!, askingPrice: Int(askingPrice)!, eventDesc: description)
+        self.eventToCreate = event
+    }
+    
     /*
     // MARK: - Navigation
 
