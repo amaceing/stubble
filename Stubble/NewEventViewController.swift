@@ -89,6 +89,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         
         let eventId = DB.create(collection: "events",object: event)
         print("Event: \(eventId)")
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

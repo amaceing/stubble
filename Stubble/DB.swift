@@ -13,8 +13,8 @@ open class DB {
     
     open static func create(collection: String, object: NSObject) -> String
     {
-        let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
         do {
+            let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
             let key = ref.child(collection).childByAutoId().key
             try ref.updateChildValues(["/\(collection)/\(key)":JSONSerializer.toDictionary(JSONSerializer.toJson(object))])
             return key

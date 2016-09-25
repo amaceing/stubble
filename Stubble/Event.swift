@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 enum EventType {
     case basketball
@@ -33,6 +34,17 @@ class Event: NSObject {
         self.dateAndTime = dateAndtime
         self.askingPrice = askingPrice
         self.eventDescription = eventDesc
+    }
+    
+    init(snapshot: FIRDataSnapshot) {
+        print(snapshot)
+        let titleSnapshot = snapshot.childSnapshot(forPath: "title")
+        self.title = titleSnapshot.value as! String
+        self.eventType = EventType.basketball
+        self.numberOfTickets = 4
+        self.dateAndTime = Date()
+        self.askingPrice = 20
+        self.eventDescription = snapshot.value(forKey: "description") as! String
     }
     
     
