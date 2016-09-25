@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Search Events View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="SearchEventsViewController" customModule="Stubble" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,14 +34,14 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="searchInactive" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="searchInactive" id="acW-dT-cKf"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-398"/>
         </scene>
-        <!--Messages-->
+        <!--Messages View Controller-->
         <scene sceneID="N06-VB-J8u">
             <objects>
                 <viewController id="S3D-lV-0Bb" customClass="MessagesViewController" customModule="Stubble" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,14 +66,14 @@
                             <constraint firstItem="LZB-XE-xaL" firstAttribute="top" secondItem="QVV-6C-Qmg" secondAttribute="bottom" constant="243" id="Kgv-GO-YM9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="messagesInactive" id="y7r-1g-eoB"/>
+                    <tabBarItem key="tabBarItem" title="" image="messagesInactive" id="y7r-1g-eoB"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y5-7b-4zU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1421" y="-398"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="W0p-Zw-zK9">
             <objects>
                 <viewController id="VPr-iu-Cdu" customClass="ProfileViewController" customModule="Stubble" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,14 +98,14 @@
                             <constraint firstItem="SzA-Xj-9Kc" firstAttribute="centerX" secondItem="kTC-xG-qHZ" secondAttribute="centerX" id="pUO-pR-1Qc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="profileInactive" id="ZhT-qZ-xMB"/>
+                    <tabBarItem key="tabBarItem" title="" image="profileInactive" id="ZhT-qZ-xMB"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ze1-e7-OST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1421" y="264"/>
         </scene>
-        <!--Tickets-->
+        <!--Ticket Manager View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="TicketManagerViewController" customModule="Stubble" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tickets" image="walletInactive" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="walletInactive" id="cPa-gy-q4n"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -428,11 +428,11 @@
             </objects>
             <point key="canvasLocation" x="-1324" y="101"/>
         </scene>
-        <!--Feed-->
+        <!--Navigation Controller-->
         <scene sceneID="IDS-eo-GQE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Tg-YJ-zz2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="feedInactive" selectedImage="feedActive" id="8gY-RK-HfS" userLabel="Feed"/>
+                    <tabBarItem key="tabBarItem" title="" image="feedInactive" selectedImage="feedActive" id="8gY-RK-HfS" userLabel="Feed"/>
                     <toolbarItems/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ee-PJ-ASq">
