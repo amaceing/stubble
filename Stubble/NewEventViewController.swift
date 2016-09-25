@@ -88,7 +88,6 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         self.eventToCreate = event
     }
     
-
     /*
     // MARK: - Navigation
 
