@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class FeedViewController: UIViewController {
     @IBOutlet weak var feed: UITableView!
     @IBOutlet weak var stubble: UILabel!
     fileprivate var events: [Event] = []
-
+    
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Firebase reference
+        self.ref = FIRDatabase.database().reference()
+        
+        let event = Event(title: "", eventType: EventType.other, numberOfTickets: 0, dateAndtime: Date(), askingPrice: 0, eventDesc: "")
+        self.ref.child("events").childByAutoId().setValue(JSONSerializer.toJson(event))
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +33,7 @@ class FeedViewController: UIViewController {
     }
 
     @IBAction func addEvent(_ sender: AnyObject) {
-        var eventToAdd = Event(title: "", eventType: EventType.other, numberOfTickets: 0, dateAndtime: Date(), askingPrice: 0, eventDesc: "")
+        let eventToAdd = Event(title: "", eventType: EventType.other, numberOfTickets: 0, dateAndtime: Date(), askingPrice: 0, eventDesc: "")
         let newEventVC = NewEventViewController(nibName: "NewEventViewController", bundle: nil)
         newEventVC.eventToCreate = eventToAdd
         self.navigationController?.pushViewController(newEventVC, animated: true)
