@@ -23,4 +23,19 @@ open class DB {
         }
         return ""
     }
+    
+    open static func read()
+    {
+        // TODO: Create a function to read collection objects
+    }
+    
+    open static func update()
+    {
+        // TODO: Create a function to update collection objects
+    }
+    
+    open static func delete()
+    {
+        // TODO: Create a function to delete collection objects
+    }
 }
