@@ -29,7 +29,6 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         self.titleField.delegate = self
         self.typeField.delegate = self
@@ -37,9 +36,6 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         self.timeField.delegate = self
         self.askingPriceField.delegate = self
         self.descriptionField.delegate = self
-        
-        print("viewLoad")
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +73,19 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
             print("Invalid event type")
         }
         return type
+    }
+    
+    @IBAction func createEvent(_ sender: UIButton) {
+        let title: String = self.titleField.text!
+        let type = setEventType()
+        let tickets = self.ticketsField.text!
+        let time = self.timeField.text!
+        let askingPrice = self.askingPriceField.text!
+        let description = self.descriptionField.text!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let event = Event(title: title, eventType: type, numberOfTickets: Int(tickets)!, dateAndtime: dateFormatter.date(from: time)!, askingPrice: Int(askingPrice)!, eventDesc: description)
+        self.eventToCreate = event
     }
     
 
