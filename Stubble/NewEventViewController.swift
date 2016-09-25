@@ -59,9 +59,9 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         let typeOfEvent = typeField.text!
         var type: EventType!
         switch typeOfEvent {
-        case "BasketBall":
+        case "Basketball":
             type = EventType.basketball
-        case "BaseBall":
+        case "Baseball":
             type = EventType.baseball
         case "Football":
             type = EventType.football
