@@ -17,18 +17,14 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func addEvent(_ sender: AnyObject) {
-        let eventToAdd = Event(title: "", eventType: EventType.other, numberOfTickets: 0, dateAndtime: Date(), askingPrice: 0, eventDesc: "")
-        let newEventVC = NewEventViewController(nibName: "NewEventViewController", bundle: nil)
-        newEventVC.eventToCreate = eventToAdd
-        self.navigationController?.pushViewController(newEventVC, animated: true)
-        self.events.append(newEventVC.eventToCreate!)
     }
     
     //MARK: Table View Implementation
