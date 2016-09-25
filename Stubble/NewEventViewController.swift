@@ -82,9 +82,10 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         let time = self.timeField.text!
         let askingPrice = self.askingPriceField.text!
         let description = self.descriptionField.text!
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let event = Event(title: title, eventType: type, numberOfTickets: Int(tickets)!, dateAndtime: dateFormatter.date(from: time)!, askingPrice: Int(askingPrice)!, eventDesc: description)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let eventDate = formatter.date(from: time)
+        let event = Event(title: title, eventType: type, numberOfTickets: Int(tickets)!, dateAndtime: eventDate!, askingPrice: Int(askingPrice)!, eventDesc: description)
         self.eventToCreate = event
     }
     
