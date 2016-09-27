@@ -21,14 +21,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.self.dataSource = FirebaseTableViewDataSource(ref: ref, cellReuseIdentifier: "events", view: self.feed)
-//        self.dataSource = FirebaseTableViewDataSource(ref: ref, cellReuseIdentifier: "event", view: self.feed)
         self.feed.dataSource = self
-//        self.dataSource.populateCell {(cell: UITableViewCell, obj: NSObject) -> Void in
-//            let snap = obj as! FIRDataSnapshot
-//            let event = Event(snapshot: snap)
-//            cell.textLabel?.text = event.title
-//            self.events.append(event)
-//        }
         self.ref.observe(.value, with: {(snapshot) -> Void in
             for event in snapshot.children {
                 let eventToAdd = Event(snapshot: event as! FIRDataSnapshot)
