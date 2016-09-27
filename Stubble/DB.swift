@@ -9,6 +9,10 @@
 import Foundation
 import FirebaseDatabase
 
+public protocol Nameable {
+    static func entityName() -> String
+}
+
 open class DB {
     
     open static func create(collection: String, object: NSObject) -> String
@@ -24,9 +28,20 @@ open class DB {
         return ""
     }
     
-    open static func read()
+    open static func read(collection: String, className: String) -> [NSObject]
     {
         // TODO: Create a function to read collection objects
+        var items: [NSObject] = []
+        let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child(collection)
+        ref.observeSingleEvent(of: .value, with: {(snapshot) -> Void in
+            for object in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                if let item = FIRDataObject.create(name: className,snapshot: object){
+                    print(item, item.value(forKey: "title"))
+                    items.append(item)
+                }
+            }
+        })
+        return items
     }
     
     open static func update()

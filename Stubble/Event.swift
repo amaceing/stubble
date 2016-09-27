@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-enum EventType {
+enum EventType: String {
     case basketball
     case baseball
     case football
@@ -19,34 +19,11 @@ enum EventType {
     case other
 }
 
-class Event: NSObject {
-    var title: String
-    var eventType: EventType
-    var numberOfTickets: Int
-    var dateAndTime: Date
-    var askingPrice: Int
-    var eventDescription: String
-    
-    init(title: String, eventType: EventType, numberOfTickets: Int, dateAndtime: Date, askingPrice: Int, eventDesc: String) {
-        self.title = title
-        self.eventType = eventType
-        self.numberOfTickets = numberOfTickets
-        self.dateAndTime = dateAndtime
-        self.askingPrice = askingPrice
-        self.eventDescription = eventDesc
-    }
-    
-    init(snapshot: FIRDataSnapshot) {
-        print(snapshot)
-        let titleSnapshot = snapshot.childSnapshot(forPath: "title")
-        self.title = titleSnapshot.value as! String
-        self.eventType = EventType.basketball
-        self.numberOfTickets = 4
-        self.dateAndTime = Date()
-        self.askingPrice = 20
-        self.eventDescription = snapshot.value(forKey: "description") as! String
-    }
-    
-    
-    
+class Event: FIRDataObject {
+    var title: String = ""
+    var eventType: String = EventType.other.rawValue
+    var numberOfTickets: Int = 0
+    var dateAndTime: Date = Date()
+    var askingPrice: Double = 0.00
+    var eventDescription: String = ""
 }

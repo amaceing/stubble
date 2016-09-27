@@ -48,27 +48,27 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         eventToCreate?.title = titleField.text!
         eventToCreate?.eventType = setEventType()
         eventToCreate?.numberOfTickets = Int(ticketsField.text!)!
-        eventToCreate?.askingPrice = Int(askingPriceField.text!)!
+        eventToCreate?.askingPrice = Double(askingPriceField.text!)!
     }
     
-    func setEventType() -> EventType {
+    func setEventType() -> String {
         let typeOfEvent = typeField.text!
-        var type: EventType!
+        var type: String!
         switch typeOfEvent {
         case "Basketball":
-            type = EventType.basketball
+            type = EventType.basketball.rawValue
         case "Baseball":
-            type = EventType.baseball
+            type = EventType.baseball.rawValue
         case "Football":
-            type = EventType.football
+            type = EventType.football.rawValue
         case "Soccer":
-            type = EventType.soccer
+            type = EventType.soccer.rawValue
         case "Concert":
-            type = EventType.concert
+            type = EventType.concert.rawValue
         case "Play":
-            return EventType.play
+            return EventType.play.rawValue
         case "Other":
-            type = EventType.other
+            type = EventType.other.rawValue
         default:
             print("Invalid event type")
         }
@@ -85,7 +85,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let eventDate = formatter.date(from: time)
-        let event = Event(title: title, eventType: type, numberOfTickets: Int(tickets)!, dateAndtime: eventDate!, askingPrice: Int(askingPrice)!, eventDesc: description)
+        let event = Event(dict: ["title": title, "eventType": type, "numberOfTickets": Int(tickets)!, "dateAndTime": eventDate!, "askingPrice": Double(askingPrice)!, "eventDescription": description])
         
         let eventId = DB.create(collection: "events",object: event)
         print("Event: \(eventId)")
