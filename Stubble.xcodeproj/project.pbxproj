@@ -11,6 +11,7 @@
 		3CB38A561D976E0F0047D40A /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB38A551D976E0F0047D40A /* DB.swift */; };
 		627AA491FC820216916D0743 /* Pods_StubbleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7528C214A96FA377F95B3DD2 /* Pods_StubbleUITests.framework */; };
 		A229EE511D7D2443001E8743 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229EE4F1D7D2443001E8743 /* LoginViewController.swift */; };
+		A26910A91D99E68D005EBCAC /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26910A81D99E68D005EBCAC /* EventTableViewCell.swift */; };
 		A273AD951D978C9700929E5C /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A273AD941D978C9700929E5C /* JsonSerializer.swift */; };
 		A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */; };
 		A29CDA4E1D7CFB40002EAAA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */; };
@@ -54,6 +55,7 @@
 		86917598AE74EEFCA291094D /* Pods_StubbleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StubbleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A229CB921D94E35400920DC7 /* Stubble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stubble.entitlements; sourceTree = "<group>"; };
 		A229EE4F1D7D2443001E8743 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A26910A81D99E68D005EBCAC /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A273AD941D978C9700929E5C /* JsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializer.swift; sourceTree = "<group>"; };
 		A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A29CDA4D1D7CFB40002EAAA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				A229EE4F1D7D2443001E8743 /* LoginViewController.swift */,
 				A29CDA491D7CEFBC002EAAA0 /* NewEventViewController.swift */,
 				A2CDF2F41D697D5100C55FE5 /* FeedViewController.swift */,
+				A26910A81D99E68D005EBCAC /* EventTableViewCell.swift */,
 				A2CDF3221D697F9000C55FE5 /* TicketManagerViewController.swift */,
 				A2CDF3241D697FAD00C55FE5 /* MessagesViewController.swift */,
 				A2CDF3261D697FB900C55FE5 /* SearchEventsViewController.swift */,
@@ -300,7 +303,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Mace;
 				TargetAttributes = {
 					A2CDF2EE1D697D5100C55FE5 = {
@@ -501,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26910A91D99E68D005EBCAC /* EventTableViewCell.swift in Sources */,
 				A229EE511D7D2443001E8743 /* LoginViewController.swift in Sources */,
 				3CB38A561D976E0F0047D40A /* DB.swift in Sources */,
 				A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */,
@@ -580,8 +584,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -625,8 +631,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -645,6 +653,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

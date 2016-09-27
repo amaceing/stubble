@@ -37,14 +37,42 @@ class Event: NSObject {
     }
     
     init(snapshot: FIRDataSnapshot) {
-        print(snapshot)
         let titleSnapshot = snapshot.childSnapshot(forPath: "title")
+        let eventDescriptionSnapshot = snapshot.childSnapshot(forPath: "eventDescription")
+        let eventTypeSnapshot = snapshot.childSnapshot(forPath: "eventType")
+        let numTicketsSnapshot = snapshot.childSnapshot(forPath: "numberOfTickets")
+        let dateAndTimeSnapShot = snapshot.childSnapshot(forPath: "dateAndTime")
+        let askingPriceSnapShot = snapshot.childSnapshot(forPath: "askingPrice")
         self.title = titleSnapshot.value as! String
+        self.eventDescription = eventDescriptionSnapshot.value as! String
         self.eventType = EventType.basketball
-        self.numberOfTickets = 4
+        self.numberOfTickets = numTicketsSnapshot.value as! Int
         self.dateAndTime = Date()
-        self.askingPrice = 20
-        self.eventDescription = snapshot.value(forKey: "description") as! String
+        self.askingPrice = askingPriceSnapShot.value as! Int
+    }
+    
+    internal func setEventType(type: String) -> EventType {
+        let typeOfEvent = type
+        var type: EventType!
+        switch typeOfEvent {
+        case "Basketball":
+            type = EventType.basketball
+        case "Baseball":
+            type = EventType.baseball
+        case "Football":
+            type = EventType.football
+        case "Soccer":
+            type = EventType.soccer
+        case "Concert":
+            type = EventType.concert
+        case "Play":
+            return EventType.play
+        case "Other":
+            type = EventType.other
+        default:
+            print("Invalid event type")
+        }
+        return type
     }
     
     
