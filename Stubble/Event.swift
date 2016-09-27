@@ -47,6 +47,7 @@ class Event: NSObject {
         self.eventDescription = eventDescriptionSnapshot.value as! String
         self.eventType = EventType.basketball
         self.numberOfTickets = numTicketsSnapshot.value as! Int
+        //TO DO: Figure out how to work with date from Firebase
         self.dateAndTime = Date()
         self.askingPrice = askingPriceSnapShot.value as! Int
     }
