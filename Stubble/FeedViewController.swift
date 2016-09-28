@@ -28,8 +28,6 @@ class FeedViewController: UIViewController {
             
             cell.textLabel?.text = event.title
         }
-        
-        let items = DB.read(collection:"events", className:"Event")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
