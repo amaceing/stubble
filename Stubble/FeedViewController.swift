@@ -24,7 +24,8 @@ class FeedViewController: UIViewController {
         self.feed.dataSource = self.dataSource
         self.dataSource.populateCell {(cell: UITableViewCell, obj: NSObject) -> Void in
             let snap = obj as! FIRDataSnapshot
-            let event = Event(snapshot: snap)
+            let event = Event(snap)
+            
             cell.textLabel?.text = event.title
         }
     }
