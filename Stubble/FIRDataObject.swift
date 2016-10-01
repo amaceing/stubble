@@ -8,6 +8,8 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
+/// Inheritable class for all models for
+/// easy serialization from Firebase data
 class FIRDataObject: NSObject {
     
     var snapshot: FIRDataSnapshot
@@ -15,6 +17,10 @@ class FIRDataObject: NSObject {
     var ref: FIRDatabaseReference { return snapshot.ref }
     
     
+    /// Initialize with Firebase snapshot
+    ///
+    /// - parameter snapshot: a FIRDataSnapshot of the object
+    ///
     required init(_ snapshot: FIRDataSnapshot) {
         
         self.snapshot = snapshot
@@ -33,12 +39,25 @@ class FIRDataObject: NSObject {
         }
     }
     
+    /// Initialize with NSDictionary
+    ///
+    /// - parameter dict: a NSDictionary of the object
+    ///
     init(dict: NSDictionary) {
         self.snapshot = FIRDataSnapshot()
         super.init()
         setValuesForKeys(dict as! [String : Any])
     }
     
+    
+    /// Returns an object that is serialized
+    /// into the type of a child class
+    ///
+    /// - parameter name:     name of the model to serialize into
+    /// - parameter snapshot: FIRDataSnapshot of the object
+    ///
+    /// - returns: initialized object of the child model
+    ///
     class func create(name: String, snapshot: FIRDataSnapshot) -> FIRDataObject?
     {
         let appName = Bundle.main.infoDictionary!["CFBundleName"] as! String
