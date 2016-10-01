@@ -55,7 +55,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.compare(self.expandedIndexPath!) == .orderedSame) {
-            return 300
+            return self.feed.frame.size.height
         }
         return 134
     }
@@ -90,6 +90,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.expandedIndexPath = indexPath
         }
         self.feed.endUpdates()
+        self.feed.scrollToRow(at: self.expandedIndexPath!, at: .top, animated: true)
     }
     
     
