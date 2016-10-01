@@ -20,7 +20,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.self.dataSource = FirebaseTableViewDataSource(ref: ref, cellReuseIdentifier: "events", view: self.feed)
         self.feed.dataSource = self
         self.feed.delegate = self
         DB.read(collection: "events", className: "Event", callback: { (data:[AnyObject]) -> Void in
@@ -32,14 +31,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             self.feed.reloadData()
         })
-        
-//        self.ref.observe(.value, with: {(snapshot) -> Void in
-//            for event in snapshot.children {
-//                let eventToAdd = Event(event as! FIRDataSnapshot)
-//                self.events.append(eventToAdd)
-//            }
-//            self.feed.reloadData()
-//        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -54,17 +45,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: Table View Implementation
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        //implement later
         return self.events.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //implement later
         return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //implement later
         return 134
     }
     
@@ -79,7 +67,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //implement later
         let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! EventTableViewCell
         let event = events[indexPath.section]
         cell.titleOfEvent?.text = event.title
@@ -91,6 +78,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    
+    /// Returns date and time strings from an event for display
+    ///
+    /// - parameter from: Event that dateAndTime is coming from
+    ///
+    /// - returns: tuple of String String with date and time components
     func getDateAndTime(from: Event) -> (String, String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, H:mm a"
