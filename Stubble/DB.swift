@@ -21,7 +21,7 @@ open class DB {
     /// - returns: the key of the inserted object
     ///
     /// Usage:
-    ///     DB.create(collection: "events",object: event)
+    ///     DB.create(collection:NAME, object:OBJECT)
     ///
     open static func create(collection: String, object: NSObject) -> String
     {
@@ -41,30 +41,54 @@ open class DB {
     /// sends array of serialized objects by class name to 
     /// the callback
     ///
-    /// - parameter collection: the key for the items needed in Firebase
+    /// - parameter collection: the key for the objects needed in Firebase
     /// - parameter className:  class name for the serialized object
     /// - parameter callback:   a function to make use of the results
     ///
     /// Usage:
     ///     DB.read(collection:NAME, className:CLASS, callback: { (data:[AnyObject]) -> Void in
-    ///         for item in data as! [CLASS]{
+    ///         for object in data as! [CLASS]{
     ///             // do stuff
     ///         }
     ///     })
     ///
-    open static func read(collection: String, className: String, callback: @escaping ((_ data:[AnyObject]) ->Void ))
+    open static func read(collection:String, className:String, callback: @escaping ((_ data:[AnyObject]) -> Void ))
     {
-        var items: [AnyObject] = []
+        var objects: [AnyObject] = []
         let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child(collection)
         ref.observeSingleEvent(of: .value, with: {(snapshot) -> Void in
             for object in snapshot.children.allObjects as! [FIRDataSnapshot] {
-                if let item = FIRDataObject.create(name: className,snapshot: object) {
-                    print(item, item.value(forKey: "title"))
-                    items.append(item)
-                }
+                let dataObj = FIRDataObject.create(name: className, snapshot: object)
+                objects.append(dataObj!)
             }
             
-            callback(items)
+            callback(objects)
+        })
+    }
+    
+    
+    /// Reads given collection object from Firebase by
+    /// the given key and sends a serialized object by 
+    /// class name to the callback
+    ///
+    /// - parameter collection: the key for the object's collection
+    /// - parameter className:  class name for the serialized object
+    /// - parameter key:        the key for the object
+    /// - parameter callback:   a function to make use of the result
+    ///
+    /// Usage:
+    ///     DB.readByKey(collection:NAME, className:CLASS, key:KEY) { (data:AnyObject) -> Void in
+    ///         if let object = data as? CLASS{
+    ///             // do stuff
+    ///         }
+    ///     }
+    ///
+    open static func readByKey(collection:String, className:String, key:String, callback: @escaping ((_ data:AnyObject) -> Void ))
+    {
+        let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child(collection).child(key)
+        ref.observeSingleEvent(of: .value, with: {(snapshot) -> Void in
+            let dataObj = FIRDataObject.create(name: className, snapshot: snapshot)
+            callback(dataObj!)
         })
     }
     
