@@ -55,9 +55,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.compare(self.expandedIndexPath!) == .orderedSame) {
-            return 300; // Expanded height
+            return 300
         }
-        return 134; // Normal height
+        return 134
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
