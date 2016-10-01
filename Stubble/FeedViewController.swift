@@ -17,6 +17,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     fileprivate let ref = FIRDatabase.database().reference().child("events")
     fileprivate var eventCount: UInt?
     fileprivate var events: [Event] = []
+    fileprivate var expandedIndexPath: IndexPath? = IndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 134
+        if (indexPath.compare(self.expandedIndexPath!) == .orderedSame) {
+            return 300; // Expanded height
+        }
+        return 134; // Normal height
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -76,6 +80,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.dateOfEvent.text = dateComponents.0
         cell.timeOfEvent.text = dateComponents.1
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.feed.beginUpdates()
+        if (indexPath.compare(self.expandedIndexPath!) == .orderedSame) {
+            self.expandedIndexPath = nil
+        } else {
+            self.expandedIndexPath = indexPath
+        }
+        self.feed.endUpdates()
     }
     
     
