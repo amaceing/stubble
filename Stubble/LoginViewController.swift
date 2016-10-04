@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseAuthUI
+import FirebaseGoogleAuthUI
+import FirebaseFacebookAuthUI
 
 class LoginViewController: UIViewController, FIRAuthUIDelegate {
     @IBOutlet weak var username: UITextField!
@@ -27,7 +29,7 @@ class LoginViewController: UIViewController, FIRAuthUIDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let user = FIRAuth.auth()?.currentUser {
+        if (FIRAuth.auth()?.currentUser) != nil {
             // User is signed in.
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let feedVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
@@ -36,6 +38,10 @@ class LoginViewController: UIViewController, FIRAuthUIDelegate {
             // No user signed in
             let authUI = FIRAuthUI.authUI()
             authUI?.delegate = self
+            let googleAuthUI = FIRGoogleAuthUI(clientID: Auth().kGoogleClientID)
+            let facebookAuthUI = FIRFacebookAuthUI(appID: Auth().kFacebookAppID)
+            authUI?.signInProviders = [googleAuthUI!, facebookAuthUI!]
+            
             let authViewController = authUI!.authViewController()
             self.present(authViewController, animated: true, completion: nil)
         }
@@ -78,16 +84,22 @@ class LoginViewController: UIViewController, FIRAuthUIDelegate {
     /// - parameter user:   The signed in user if the sign in attempt was successful.
     /// - parameter error:  The error that occured during sign in, if any.
     ///
-    public func authUI(_ authUI: FIRAuthUI, didSignInWith user: FIRUser?, error: Error?) {
+    func authUI(_ authUI: FIRAuthUI, didSignInWith user: FIRUser?, error: Error?) {
         if error == nil {
-            let alert = UIAlertController.init(title: "Success", message: user?.email, preferredStyle: UIAlertControllerStyle.alert)
-            let defaultAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-            alert.addAction(defaultAction)
-            alert.present(authUI.authViewController(), animated: true, completion: nil)
-            
             authUI.authViewController().dismiss(animated: true, completion: {
             })
         }
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        var sourceApplication: String = ""
+        if #available(iOS 10.0, *) {
+            sourceApplication = options[UIApplicationOpenURLOptionUniversalLinksOnly] as! String
+        } else {
+            // Fallback on earlier versions
+            sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication.rawValue] as! String
+        }
+        return FIRAuthUI.authUI()!.handleOpen(url as URL, sourceApplication: sourceApplication )
     }
     /*
     // MARK: - Navigation
