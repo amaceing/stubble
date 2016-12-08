@@ -85,12 +85,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.feed.beginUpdates()
         if (indexPath.compare(self.expandedIndexPath!) == .orderedSame) {
-            self.expandedIndexPath = nil
+            //change back to regular height
+            self.expandedIndexPath = IndexPath()
         } else {
             self.expandedIndexPath = indexPath
         }
         self.feed.endUpdates()
-        self.feed.scrollToRow(at: self.expandedIndexPath!, at: .top, animated: true)
+        self.feed.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
     
