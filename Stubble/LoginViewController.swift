@@ -17,8 +17,17 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if FIRAuth.auth()?.currentUser != nil {
+            // User is signed in.
+            print(FIRAuth.auth()?.currentUser?.email)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let feedVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
+            self.present(feedVC, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
