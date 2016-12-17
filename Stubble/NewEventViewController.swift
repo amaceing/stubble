@@ -87,7 +87,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         let eventDate = formatter.date(from: time)
         let event = Event(dict: ["title": title, "eventType": type, "numberOfTickets": Int(tickets)!, "dateAndTime": eventDate!, "askingPrice": Double(askingPrice)!, "eventDescription": description])
         
-        let eventId = DB.create(collection: "events",object: event)
+        let eventId = DB.create(collection: "events", object: event)
         print("Event: \(eventId)")
         self.navigationController?.popViewController(animated: true)
     }

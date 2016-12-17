@@ -18,6 +18,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     fileprivate var eventCount: UInt?
     fileprivate var events: [Event] = []
     fileprivate var expandedIndexPath: IndexPath? = IndexPath()
+    fileprivate var nonExpandedIndexPath = IndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.feed.beginUpdates()
         if (indexPath.compare(self.expandedIndexPath!) == .orderedSame) {
             //change back to regular height
-            self.expandedIndexPath = IndexPath()
+            self.expandedIndexPath = self.nonExpandedIndexPath
         } else {
             self.expandedIndexPath = indexPath
         }
