@@ -56,7 +56,7 @@ open class DB {
     {
         var objects: [AnyObject] = []
         let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child(collection)
-        ref.observeSingleEvent(of: .value, with: {(snapshot) -> Void in
+        ref.observe(.value, with: {(snapshot) -> Void in
             for object in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 let dataObj = FIRDataObject.create(name: className, snapshot: object)
                 objects.append(dataObj!)
