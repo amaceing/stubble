@@ -35,7 +35,7 @@ class EventTableViewCell: UITableViewCell {
         self.userImage.layer.borderColor = UIColor.gray.cgColor
         self.userImage.layer.backgroundColor = UIColor.gray.cgColor
         self.userImage.layer.cornerRadius = 22
-        //self.userImage.clipsToBounds = true
+        self.userImage.clipsToBounds = true
     }
 
 }

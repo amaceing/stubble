@@ -85,7 +85,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QL0-E8-w2J"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QL0-E8-w2J">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CH6-dj-5ys"/>
+                                    <constraint firstAttribute="height" constant="200" id="TfG-xP-Km8"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC4-xC-UKn">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -108,14 +113,12 @@
                             <constraint firstAttribute="leadingMargin" secondItem="UC4-xC-UKn" secondAttribute="leading" id="40G-7s-c5f"/>
                             <constraint firstItem="UC4-xC-UKn" firstAttribute="top" secondItem="bNY-iv-ulU" secondAttribute="bottom" id="FP2-Oh-dEE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UC4-xC-UKn" secondAttribute="trailing" id="IJh-Zp-hVf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QL0-E8-w2J" secondAttribute="trailing" constant="72" id="Qjv-yY-Y6q"/>
                             <constraint firstItem="1CD-gj-aY4" firstAttribute="leading" secondItem="kTC-xG-qHZ" secondAttribute="leadingMargin" constant="71" id="X8l-lT-Rhm"/>
                             <constraint firstItem="QL0-E8-w2J" firstAttribute="top" secondItem="UC4-xC-UKn" secondAttribute="bottom" constant="8" id="jO9-FU-wGM"/>
+                            <constraint firstItem="QL0-E8-w2J" firstAttribute="centerX" secondItem="kTC-xG-qHZ" secondAttribute="centerX" id="kUj-Go-4Xh"/>
                             <constraint firstItem="f6g-wv-1Pw" firstAttribute="leading" secondItem="kTC-xG-qHZ" secondAttribute="leadingMargin" constant="71" id="m49-hX-AfT"/>
                             <constraint firstItem="f6g-wv-1Pw" firstAttribute="top" secondItem="1CD-gj-aY4" secondAttribute="bottom" constant="8" id="mvs-ec-JCt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f6g-wv-1Pw" secondAttribute="trailing" constant="72" id="sX2-R7-cj1"/>
-                            <constraint firstItem="1CD-gj-aY4" firstAttribute="top" secondItem="QL0-E8-w2J" secondAttribute="bottom" constant="8" id="viN-l1-d4g"/>
-                            <constraint firstItem="QL0-E8-w2J" firstAttribute="leading" secondItem="kTC-xG-qHZ" secondAttribute="leadingMargin" constant="71" id="wRc-c5-22M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1CD-gj-aY4" secondAttribute="trailing" constant="72" id="zW0-3K-YGF"/>
                         </constraints>
                     </view>
@@ -636,7 +639,7 @@
                     <tabBarItem key="tabBarItem" title="" image="feedInactive" selectedImage="feedActive" id="8gY-RK-HfS" userLabel="Feed"/>
                     <toolbarItems/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ee-PJ-ASq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9ee-PJ-ASq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

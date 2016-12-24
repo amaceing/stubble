@@ -30,7 +30,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate {
         self.profileImage.layer.masksToBounds = false
         self.profileImage.layer.borderColor = UIColor.gray.cgColor
         self.profileImage.layer.backgroundColor = UIColor.gray.cgColor
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.height/2
+        var radius = self.profileImage.frame.size.width/2
+        self.profileImage.layer.cornerRadius = 100
         self.profileImage.clipsToBounds = true
     }
 
