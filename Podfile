@@ -10,6 +10,7 @@ target 'Stubble' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'FirebaseUI'
+  pod 'Firebase/Storage'
   target 'StubbleTests' do
     inherit! :search_paths
     # Pods for testing
