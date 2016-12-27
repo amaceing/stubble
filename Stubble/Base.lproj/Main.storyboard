@@ -330,6 +330,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AmV-iN-qqQ">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="UQu-lF-rY0"/>
+                                                        <constraint firstAttribute="height" constant="44" id="lMP-fH-UCX"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -346,7 +347,7 @@
                                                 <constraint firstItem="QC3-1C-VFq" firstAttribute="top" secondItem="v2D-27-NJB" secondAttribute="top" id="8k9-83-Le1"/>
                                                 <constraint firstItem="Gvv-ea-7T1" firstAttribute="top" secondItem="ilC-BR-Ak6" secondAttribute="bottom" constant="26" id="95Z-U2-M3N"/>
                                                 <constraint firstItem="EET-4Y-7Nu" firstAttribute="baseline" secondItem="Mfr-Ht-vPy" secondAttribute="baseline" id="Adt-bu-ghQ"/>
-                                                <constraint firstItem="AmV-iN-qqQ" firstAttribute="bottom" secondItem="uQY-2O-Afr" secondAttribute="bottomMargin" id="I4U-mu-1kH"/>
+                                                <constraint firstItem="AmV-iN-qqQ" firstAttribute="top" secondItem="Gvv-ea-7T1" secondAttribute="bottom" constant="3" id="FIa-q0-0fa"/>
                                                 <constraint firstItem="P7f-ei-WS0" firstAttribute="top" secondItem="Wm0-UL-iic" secondAttribute="top" id="III-Bo-OoE"/>
                                                 <constraint firstItem="QC3-1C-VFq" firstAttribute="leading" secondItem="Djv-lh-HSM" secondAttribute="trailing" constant="13" id="JBa-XG-bw2"/>
                                                 <constraint firstItem="EET-4Y-7Nu" firstAttribute="top" secondItem="IKn-6A-reK" secondAttribute="bottom" constant="5" id="Jes-UB-Gjf"/>
@@ -653,7 +654,7 @@
                     <tabBarItem key="tabBarItem" title="" image="feedInactive" selectedImage="feedActive" id="8gY-RK-HfS" userLabel="Feed"/>
                     <toolbarItems/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9ee-PJ-ASq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ee-PJ-ASq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

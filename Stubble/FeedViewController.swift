@@ -9,12 +9,15 @@
 import UIKit
 import FirebaseDatabaseUI
 import FirebaseDatabase
+import FirebaseStorage
+import FirebaseAuth
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var feed: UITableView!
     @IBOutlet weak var stubble: UILabel!
     fileprivate var dataSource = FirebaseTableViewDataSource()
     fileprivate let ref = FIRDatabase.database().reference().child("events")
+    let user = FIRAuth.auth()?.currentUser
     fileprivate var eventCount: UInt?
     fileprivate var events: [Event] = []
     fileprivate var expandedIndexPath: IndexPath? = IndexPath()
@@ -80,6 +83,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let dateComponents = getDateAndTime(from: event)
         cell.dateOfEvent.text = dateComponents.0
         cell.timeOfEvent.text = dateComponents.1
+        
+        let image = FIRStorage.storage().reference(withPath: "\(self.user!.uid)image.jpg")
+        image.data(withMaxSize: 10 * 1024 * 1024, completion: {data, error in
+            if error != nil {
+                // Uh-oh, an error occurred!
+                print("ERROR: \(error?.localizedDescription)")
+            } else {
+                // Data for "images/island.jpg" is returned
+                cell.userImage.image = UIImage(data: data!)
+            }
+        })
+        
         return cell
     }
     

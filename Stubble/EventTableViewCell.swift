@@ -32,8 +32,8 @@ class EventTableViewCell: UITableViewCell {
     func cropProfileImageToCircle() {
         self.userImage.layer.borderWidth = 1
         self.userImage.layer.masksToBounds = false
-        self.userImage.layer.borderColor = UIColor.gray.cgColor
-        self.userImage.layer.backgroundColor = UIColor.gray.cgColor
+        self.userImage.layer.borderColor = UIColor.clear.cgColor
+        self.userImage.layer.backgroundColor = UIColor.clear.cgColor
         self.userImage.layer.cornerRadius = 22
         self.userImage.clipsToBounds = true
     }
