@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func loadUserPhoto() {
         let image = storage.reference(withPath: "\(self.user!.uid)image.jpg")
-        image.data(withMaxSize: 10 * 512 * 512, completion: {data, error in
+        image.data(withMaxSize: 10 * 1024 * 1024, completion: {data, error in
             if error != nil {
                 // Uh-oh, an error occurred!
                 print("ERROR: \(String(describing: error?.localizedDescription))")

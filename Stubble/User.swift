@@ -10,7 +10,7 @@ import Foundation
 import FirebaseDatabase
 
 class User: FIRDataObject {
-    let id: String = ""
+    var id: String = ""
     var name: String = ""
     var email: String = ""
     var username: String = ""
