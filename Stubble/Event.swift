@@ -26,4 +26,8 @@ class Event: FIRDataObject {
     var dateAndTime: Date = Date()
     var askingPrice: Double = 0.00
     var eventDescription: String = ""
+    
+    override var description: String {
+        return "user info: \(title) \(eventType) \(numberOfTickets) \(dateAndTime) \(askingPrice) \(eventDescription)"
+    }
 }

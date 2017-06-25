@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var usernameInput: UITextField!
     let picker = UIImagePickerController()
     let storage = FIRStorage.storage()
     let user = FIRAuth.auth()?.currentUser
@@ -43,10 +44,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func loadUserPhoto() {
         let image = storage.reference(withPath: "\(self.user!.uid)image.jpg")
-        image.data(withMaxSize: 10 * 1024 * 1024, completion: {data, error in
+        image.data(withMaxSize: 10 * 512 * 512, completion: {data, error in
             if error != nil {
                 // Uh-oh, an error occurred!
-                print("ERROR: \(error?.localizedDescription)")
+                print("ERROR: \(String(describing: error?.localizedDescription))")
             } else {
                 // Data for "images/island.jpg" is returned
                 self.profileImage.image = UIImage(data: data!)
@@ -77,7 +78,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let uploadTask = userImageRef.put(data, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {
                 // Uh-oh, an error occurred!
-                print("THIS IS AN ERROR \(error?.localizedDescription)!")
+                print("THIS IS AN ERROR \(String(describing: error?.localizedDescription))!")
                 return
             }
             // Metadata contains file metadata such as size, content-type, and download URL.
@@ -86,5 +87,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
 
+    @IBAction func saveUserInformation(_ sender: Any) {
+        let name = self.nameInput.text
+        let email = self.emailInput.text
+        let username = self.usernameInput.text
+        print("\(String(describing: name)) \(String(describing: email)) \(String(describing: username))")
+        let user = User(dict: ["id": self.user?.uid, "name": name, "email": email, "username": username])
+        let userInfoID = DB.create(collection: "users", object: user)
+        print("\(String(describing: user))")
+        
+    }
 }
 

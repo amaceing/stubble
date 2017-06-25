@@ -27,6 +27,7 @@
 		A2CDF3231D697F9000C55FE5 /* TicketManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF3221D697F9000C55FE5 /* TicketManagerViewController.swift */; };
 		A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF3241D697FAD00C55FE5 /* MessagesViewController.swift */; };
 		A2CDF3271D697FB900C55FE5 /* SearchEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDF3261D697FB900C55FE5 /* SearchEventsViewController.swift */; };
+		A2E0297B1F005D440026B361 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0297A1F005D440026B361 /* User.swift */; };
 		A2E6FF771D6A53EF00870E47 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6FF761D6A53EF00870E47 /* Event.swift */; };
 		B40C6F2A0816C22D789F70E9 /* Pods_StubbleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86917598AE74EEFCA291094D /* Pods_StubbleTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		A2CDF3221D697F9000C55FE5 /* TicketManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketManagerViewController.swift; sourceTree = "<group>"; };
 		A2CDF3241D697FAD00C55FE5 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		A2CDF3261D697FB900C55FE5 /* SearchEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEventsViewController.swift; sourceTree = "<group>"; };
+		A2E0297A1F005D440026B361 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2E6FF761D6A53EF00870E47 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B4F5BEAA5CB4E3370A3DAC0B /* Pods-StubbleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StubbleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StubbleUITests/Pods-StubbleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C90FCD3BA14422BEE0E591C5 /* Pods-StubbleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StubbleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StubbleTests/Pods-StubbleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E6FF761D6A53EF00870E47 /* Event.swift */,
+				A2E0297A1F005D440026B361 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				A2CDF3251D697FAD00C55FE5 /* MessagesViewController.swift in Sources */,
 				A2CDF2F71D697D5100C55FE5 /* ProfileViewController.swift in Sources */,
 				3C5614671D99736400B46195 /* FIRDataObject.swift in Sources */,
+				A2E0297B1F005D440026B361 /* User.swift in Sources */,
 				A29CDA4B1D7CEFBC002EAAA0 /* NewEventViewController.swift in Sources */,
 				A273AD951D978C9700929E5C /* JsonSerializer.swift in Sources */,
 				A2CDF3271D697FB900C55FE5 /* SearchEventsViewController.swift in Sources */,
@@ -670,6 +674,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stubble/Stubble.entitlements;
 				DEVELOPMENT_TEAM = FBF4TQ644W;
 				INFOPLIST_FILE = Stubble/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.Stubble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -685,6 +690,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stubble/Stubble.entitlements;
 				DEVELOPMENT_TEAM = FBF4TQ644W;
 				INFOPLIST_FILE = Stubble/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMM.Stubble;
 				PRODUCT_NAME = "$(TARGET_NAME)";

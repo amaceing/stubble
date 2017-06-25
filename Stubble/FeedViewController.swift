@@ -88,7 +88,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         image.data(withMaxSize: 10 * 1024 * 1024, completion: {data, error in
             if error != nil {
                 // Uh-oh, an error occurred!
-                print("ERROR: \(error?.localizedDescription)")
+                print("ERROR: \(String(describing: error?.localizedDescription))")
             } else {
                 // Data for "images/island.jpg" is returned
                 cell.userImage.image = UIImage(data: data!)

@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if FIRAuth.auth()?.currentUser != nil {
             // User is signed in.
-            print(FIRAuth.auth()?.currentUser?.email)
+            print(FIRAuth.auth()?.currentUser?.email ?? "error")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let feedVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
             self.present(feedVC, animated: true, completion: nil)
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
             (user, error) in
             if error != nil {
                 self.authResult.text = error?.localizedDescription
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "error")
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let feedVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC")
