@@ -16,11 +16,8 @@ class FIRDataObject: NSObject {
     
     
     required init(_ snapshot: FIRDataSnapshot) {
-        
         self.snapshot = snapshot
-        
         super.init()
-        
         for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
             if responds(to: Selector(child.key)) {
                 if (child.value as? NSDictionary) != nil{

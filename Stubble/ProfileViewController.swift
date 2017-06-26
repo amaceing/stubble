@@ -13,6 +13,8 @@ import FirebaseStorage
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
@@ -27,6 +29,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.cropProfileImageToCircle()
         picker.delegate = self
         self.loadUserPhoto()
+        self.loadUserInformation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +57,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         })
     }
+    
+    func loadUserInformation() {
+        DB.readByKey(collection: "users", className: "User", key: self.user?.uid ?? "not set", callback: {(data: Any) -> Void in
+            let userInfo = data as! User
+            self.nameLabel.text = userInfo.name
+            self.usernameLabel.text = userInfo.username
+            self.emailLabel.text = userInfo.email
+        })
+    }
 
     @IBAction func changeImage(_ sender: UIButton) {
         picker.sourceType = .photoLibrary
@@ -75,7 +87,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let storageRef = storage.reference()
         let userImageFileName = user!.uid + "image.jpg"
         let userImageRef = storageRef.child(userImageFileName)
-        let uploadTask = userImageRef.put(data, metadata: nil) { (metadata, error) in
+        userImageRef.put(data, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {
                 // Uh-oh, an error occurred!
                 print("THIS IS AN ERROR \(String(describing: error?.localizedDescription))!")
@@ -92,10 +104,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let email = self.emailInput.text
         let username = self.usernameInput.text
         print("\(String(describing: name)) \(String(describing: email)) \(String(describing: username))")
-        let user = User(dict: ["id": self.user?.uid, "name": name, "email": email, "username": username])
-        let userInfoID = DB.create(collection: "users", object: user)
-        print("\(String(describing: user))")
-        
+        let user = User(dict: ["id": (self.user?.uid)!, "name": name!, "email": email!, "username": username!])
+        DB.create(collection: "users", withPath: (self.user?.uid)!, object: user)
     }
 }
 

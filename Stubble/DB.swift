@@ -23,8 +23,7 @@ open class DB {
     /// Usage:
     ///     DB.create(collection:NAME, object:OBJECT)
     ///
-    open static func create(collection: String, object: NSObject) -> String
-    {
+    open static func create(collection: String, object: NSObject) -> String {
         do {
             let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
             let key = ref.child(collection).childByAutoId().key
@@ -34,6 +33,15 @@ open class DB {
             print("Error adding to \(collection)")
         }
         return ""
+    }
+    
+    open static func create(collection: String, withPath: String, object: Any) {
+        do {
+            let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+            try ref.child(collection + "/" + withPath).setValue(JSONSerializer.toDictionary(JSONSerializer.toJson(object)))
+        } catch {
+            print("Error adding to \(collection)")
+        }
     }
     
     
@@ -52,8 +60,7 @@ open class DB {
     ///         }
     ///     })
     ///
-    open static func read(collection:String, className:String, callback: @escaping ((_ data:[AnyObject]) -> Void ))
-    {
+    open static func read(collection: String, className: String, callback: @escaping ((_ data:[AnyObject]) -> Void )) {
         var objects: [AnyObject] = []
         let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child(collection)
         ref.observe(.value, with: {(snapshot) -> Void in
@@ -66,9 +73,8 @@ open class DB {
         })
     }
     
-    
     /// Reads given collection object from Firebase by
-    /// the given key and sends a serialized object by 
+    /// the given key and sends a serialized object by
     /// class name to the callback
     ///
     /// - parameter collection: the key for the object's collection
@@ -83,22 +89,21 @@ open class DB {
     ///         }
     ///     }
     ///
-    open static func readByKey(collection:String, className:String, key:String, callback: @escaping ((_ data:AnyObject) -> Void ))
-    {
+    
+    open static func readByKey(collection: String, className: String, key: String, callback: @escaping ((_ data: Any) -> Void )) {
         let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child(collection).child(key)
-        ref.observeSingleEvent(of: .value, with: {(snapshot) -> Void in
-            let dataObj = FIRDataObject.create(name: className, snapshot: snapshot)
-            callback(dataObj!)
+        ref.observe(.value, with: {(snapshot) -> Void in
+            let userInfo = FIRDataObject.create(name: className, snapshot: snapshot)
+            callback(userInfo!)
         })
     }
     
-    open static func update()
-    {
+    
+    open static func update() {
         // TODO: Create a function to update collection objects
     }
     
-    open static func delete()
-    {
+    open static func delete() {
         // TODO: Create a function to delete collection objects
     }
 }
